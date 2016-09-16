@@ -308,11 +308,13 @@
                                     auth.signin(loginOptions, null, null, 'Auth0');
                                 } else if (requiresLogin) {
                                     e.preventDefault();
+                                    config.redirectUrl = $location.path() + '#' + $location.hash();
                                     redirectToLogin();
                                 }
                             }));
                         } else if (requiresLogin) {
                             e.preventDefault();
+                            config.redirectUrl = $location.path() + '#' + $location.hash();
                             redirectToLogin();
                         }
                     }
